@@ -1,6 +1,20 @@
-class LibraryInventory
+class Library
+
+
+  def initialize(books)
+    @books = books
+    @book_title = books[:title]
+  end
+
+  #---getters
+  def books()
+    return @books
+  end
+
+  def book_title()
+    return
+  end
+
+
 
 end
-
-
-# I CANT GET ANY FURTHER AS I KEEP GETTING A SUPERCLASS MISMATCH - i can see whats wrong
