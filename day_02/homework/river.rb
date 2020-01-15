@@ -7,6 +7,10 @@ class River
     @fish_stock = []
   end
 
+  def return_name(fish_name)
+    return @name
+  end
+
   def number_of_fish
     return @fish_stock.count
   end

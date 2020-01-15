@@ -11,6 +11,10 @@ class RiverTest < MiniTest::Test
     @river1 = River.new('Clyde')
   end
 
+  def test_river_name
+    assert_equal('Clyde', @river1.return_name('Clyde'))
+  end
+
   #test1 has river got fish
   def test_number_of_fish_in_river__is_empty()
     river = @river1
