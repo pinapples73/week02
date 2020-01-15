@@ -1,11 +1,15 @@
 class Bear
 
-  attr_reader :stomach
+  attr_reader :stomach, :name
 
   def initialize(bear_name, bear_type)
     @name = bear_name
     @type = bear_type
     @stomach = []
+  end
+
+  def return_bear_name(bear_name)
+    return @name
   end
 
   def number_of_fish_in_stomach()

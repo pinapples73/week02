@@ -12,7 +12,7 @@ class RiverTest < MiniTest::Test
   end
 
   def test_river_name
-    assert_equal('Clyde', @river1.return_name('Clyde'))
+    assert_equal('Clyde', @river1.return_river_name('Clyde'))
   end
 
   #test1 has river got fish

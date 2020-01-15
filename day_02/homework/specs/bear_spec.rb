@@ -13,6 +13,10 @@ class BearTest < MiniTest::Test
     @river1 = River.new('Danube')
   end
 
+  def test_bear_name
+    assert_equal('Gentle Ben', @bear1.return_bear_name('Gentle Ben'))
+  end
+
   def test_number_of_fish_in_stomach___empty
     assert_equal(0, @bear1.number_of_fish_in_stomach)
   end

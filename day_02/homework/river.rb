@@ -7,7 +7,7 @@ class River
     @fish_stock = []
   end
 
-  def return_name(fish_name)
+  def return_river_name(fish_name)
     return @name
   end
 
