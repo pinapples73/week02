@@ -5,8 +5,7 @@ require_relative("../guest")
 require_relative("../song")
 require_relative("../karaoke")
 
-Minitest::Reporters.use!
-Minitest::Reporters::SpecReporter.new
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class TestGuest < MiniTest::Test
 

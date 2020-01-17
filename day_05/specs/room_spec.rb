@@ -5,8 +5,7 @@ require_relative("../song")
 require_relative('../guest')
 require_relative('../karaoke')
 
-Minitest::Reporters.use!
-Minitest::Reporters::SpecReporter.new
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 class TestRoom < MiniTest::Test
 
@@ -52,13 +51,15 @@ class TestRoom < MiniTest::Test
   def test_check_in_guest__enough_cash
     @room01.check_in_guest(@andy , @karaoke_club)
     assert_equal(1, @room01.guest_list.count)
-    #assert_equal(0, @andy.cash)
+    assert_equal(0, @andy.cash)
     assert_equal(10, @karaoke_club.till)
   end
 
   def test_check_in_guest__not_enough_cash
     @room01.check_in_guest(@bob , @karaoke_club)
     assert_equal(0, @room01.guest_list.count)
+    assert_equal(9, @bob.cash)
+    assert_equal(0, @karaoke_club.till)
   end
 
   def test_checkout_guest
@@ -72,7 +73,7 @@ class TestRoom < MiniTest::Test
     @room01.check_in_guest(@andy, @karaoke_club)
     @room01.check_in_guest(@mandy, @karaoke_club)
     @room01.check_in_guest(@sandy, @karaoke_club)
-    @room01.check_in_guest(@bob, @karaoke_club)
+    @room01.check_in_guest(@sandy, @karaoke_club)
     assert_equal(3, @room01.guest_list.count)
   end
 
