@@ -10,8 +10,6 @@ class Room
   end
 
 
-
-
   def check_in_guest(guest , karaoke)
     @karaoke_club = karaoke
     @guest = guest
@@ -37,6 +35,15 @@ class Room
     end
   end
 
-
+  def guest_buys_drink(drink_name, bar)
+    amount = bar.return_drinks_price(drink_name)
+    if amount != nil
+      bar.add_to_bar_tab(amount)
+      p "Someone purcashed a #{drink_name} from the bar for #{amount} spondoolies."
+    else
+      p "We do not sell #{drink_name} here."
+      return nil
+    end
+  end
 
 end
